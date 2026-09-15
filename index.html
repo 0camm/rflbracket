@@ -113,35 +113,33 @@ body{
 
 /* ── BRACKET CANVAS (desktop) ── */
 .bracket-scroll{width:100%;overflow-x:auto;padding:20px 0 50px;-webkit-overflow-scrolling:touch}
-.bracket-outer{min-width:1176px;width:1176px;margin:0 auto}
-.conf-headers{display:flex;width:1176px;margin:0 auto 6px;position:relative;height:26px}
+.bracket-outer{min-width:1500px;width:1500px;margin:0 auto}
+.conf-headers{display:flex;width:1500px;margin:0 auto 6px;position:relative;height:26px}
 .conf-hdr{position:absolute;display:flex;align-items:center;gap:8px;top:0}
 .conf-tag{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:3px 9px;border-radius:4px;flex-shrink:0}
 .conf-tag.west{background:var(--bl-d);color:var(--bl);border:1px solid rgba(91,156,246,.18)}
 .conf-tag.east{background:var(--red-dim);color:var(--red);border:1px solid var(--red-mid)}
 .conf-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:17px;letter-spacing:.04em;color:var(--navy);text-transform:uppercase}
 
-.col-labels{position:relative;width:1176px;height:22px;margin:0 auto 8px}
+.col-labels{position:relative;width:1500px;height:22px;margin:0 auto 8px}
 .col-lbl{position:absolute;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);text-align:center;bottom:0}
 .col-lbl.pi{color:var(--pi)}
 .col-lbl.fin{color:var(--gold)}
 
-.bracket-canvas{position:relative;width:1176px;height:500px;margin:0 auto}
+.bracket-canvas{position:relative;width:1500px;height:488px;margin:0 auto}
 .bracket-svg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
 
 /* ── CARDS ── */
 .card{position:absolute;width:140px;border-radius:6px;overflow:hidden;border:1px solid var(--b);background:var(--s1);z-index:10;box-shadow:var(--shadow-sm);transition:box-shadow .18s ease,border-color .18s ease}
 .card:hover{box-shadow:var(--shadow-md);border-color:var(--b3)}
 .card.pi-card{border-color:var(--pi-mid)}
-.card.bye-card{border-color:var(--pi-mid);height:auto}
-.bye-hdr{font-size:8px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--pi);text-align:center;padding:5px 8px 4px;background:var(--pi-d);border-bottom:1px solid var(--pi-mid)}
 .card.finals-card{width:124px;border-color:var(--gold-mid);background:var(--s1)}
 .card.finals-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);z-index:1}
 .card.champ-card{width:124px;border-color:var(--gold-mid);background:var(--s1);height:auto}
 
 .slot{display:flex;align-items:center;height:34px;padding:0 9px;gap:7px;position:relative}
 .slot:first-child{border-bottom:1px solid var(--b2)}
-.slot.winner{background:rgba(23,138,65,.06)}
+.slot.winner{background:rgba(61,232,122,.06)}
 .slot.loser .sname,.slot.loser .sseed{opacity:.35}
 .slot.loser .slogo{opacity:.25;filter:grayscale(1)}
 .slot.winner .sname{color:var(--navy)}
@@ -157,12 +155,14 @@ body{
 .series-badge.live{color:var(--win)}
 .series-badge.done{color:var(--mu)}
 
+.pi-game-label{position:absolute;z-index:11;font-size:8px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--pi);text-align:center;white-space:nowrap}
+
 .champ-inner{padding:12px 14px;text-align:center}
 .champ-crown{font-size:18px;margin-bottom:4px}
 .champ-logo{width:38px;height:38px;object-fit:contain;display:block;margin:0 auto 4px}
 .champ-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:24px;letter-spacing:.04em;color:var(--navy)}
 .champ-series{font-size:10px;color:var(--gold);font-family:'JetBrains Mono',monospace;margin-top:2px}
-.finals-hdr{font-size:8px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);text-align:center;padding:5px 8px 4px;background:var(--gold-d);border-bottom:1px solid rgba(201,169,74,.20)}
+.finals-hdr{font-size:8px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);text-align:center;padding:5px 8px 4px;background:var(--gold-d);border-bottom:1px solid rgba(245,196,0,.12)}
 
 /* ── MOBILE BRACKET (uses same card classes as standings mobile sections) ── */
 .mobile-only{display:none}
@@ -182,7 +182,7 @@ body{
 .mob-series.live{color:var(--win)}
 .mob-series.done{color:var(--mu)}
 .mob-finals{border:1px solid var(--gold-mid);border-radius:11px;overflow:hidden;margin-bottom:20px;background:var(--s1);box-shadow:var(--shadow-sm)}
-.mob-finals-hdr{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-align:center;padding:11px;border-bottom:1px solid rgba(201,169,74,.20);background:var(--gold-d)}
+.mob-finals-hdr{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-align:center;padding:11px;border-bottom:1px solid rgba(245,196,0,.15);background:var(--gold-d)}
 .mob-finals-body{padding:11px}
 .mob-finals-body .mob-card{width:100%;background:transparent;border:none}
 
@@ -296,17 +296,17 @@ select.field-input{-webkit-appearance:none;appearance:none;cursor:pointer;backgr
 .action-btn:hover{background:rgba(91,156,246,.16)}
 .action-btn:disabled{opacity:.5;cursor:not-allowed}
 .gold-btn{width:100%;background:var(--gold-d);border:1px solid var(--gold-mid);border-radius:7px;padding:10px;color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .15s;min-height:42px;margin-top:4px}
-.gold-btn:hover{background:rgba(201,169,74,.16)}
+.gold-btn:hover{background:rgba(245,196,0,.16)}
 .gold-btn:disabled{opacity:.5;cursor:not-allowed}
-.green-btn{width:100%;background:var(--gr-d);border:1px solid rgba(28,122,62,.3);border-radius:7px;padding:10px;color:var(--gr);font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .15s;min-height:42px;margin-top:4px}
-.green-btn:hover{background:rgba(28,122,62,.16)}
+.green-btn{width:100%;background:var(--gr-d);border:1px solid rgba(31,224,122,.3);border-radius:7px;padding:10px;color:var(--gr);font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .15s;min-height:42px;margin-top:4px}
+.green-btn:hover{background:rgba(31,224,122,.16)}
 .green-btn:disabled{opacity:.5;cursor:not-allowed}
 .danger-btn{width:100%;background:var(--red-dim);border:1px solid var(--red-mid);border-radius:7px;padding:10px 16px;color:var(--red);font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:background .15s,border-color .15s;min-height:42px}
 .danger-btn:hover{background:rgba(211,18,42,.15);border-color:rgba(211,18,42,.4)}
 .danger-btn:disabled{opacity:.4;cursor:not-allowed}
 .panel-msg{font-size:12px;margin-top:8px;padding:8px 11px;border-radius:6px;display:none}
 .panel-msg.show{display:block}
-.panel-msg.success{background:var(--gr-d);border:1px solid rgba(28,122,62,.18);color:var(--gr)}
+.panel-msg.success{background:var(--gr-d);border:1px solid rgba(31,224,122,.18);color:var(--gr)}
 .panel-msg.error{background:var(--red-dim);border:1px solid var(--red-mid);color:var(--lose)}
 .hidden{display:none!important}
 .mp-filters{display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap}
@@ -326,13 +326,12 @@ select.field-input{-webkit-appearance:none;appearance:none;cursor:pointer;backgr
 .series-ctrl{display:flex;align-items:center;gap:10px;background:var(--s2);border:1px solid var(--b);border-radius:8px;padding:10px 12px;margin-bottom:8px}
 .series-ctrl-team{flex:1;min-width:0}
 .series-ctrl-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;letter-spacing:.04em;color:var(--tx);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.series-ctrl-score{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:var(--navy);text-align:center;min-width:24px;width:44px;border:1px solid var(--b);border-radius:6px;background:var(--s1);padding:3px 0;-moz-appearance:textfield}
-.series-ctrl-score::-webkit-outer-spin-button,.series-ctrl-score::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.series-ctrl-score{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;color:var(--navy);text-align:center;min-width:24px}
 .series-ctrl-btns{display:flex;gap:4px}
 .sc-btn{width:28px;height:28px;border-radius:6px;border:1px solid var(--b);background:var(--s3);color:var(--tx2);font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .12s}
 .sc-btn:hover{border-color:var(--red-edge);color:var(--navy)}
-.sc-btn.plus{color:var(--gr);border-color:rgba(28,122,62,.2)}
-.sc-btn.plus:hover{background:var(--gr-d);border-color:rgba(28,122,62,.4)}
+.sc-btn.plus{color:var(--gr);border-color:rgba(31,224,122,.2)}
+.sc-btn.plus:hover{background:var(--gr-d);border-color:rgba(31,224,122,.4)}
 .series-need{font-size:9px;color:var(--mu);text-align:center;margin-bottom:6px;letter-spacing:.06em;text-transform:uppercase}
 .format-lock{display:flex;align-items:center;gap:9px;background:var(--s2);border:1px solid var(--b);border-radius:7px;padding:9px 12px;margin-bottom:8px}
 .format-lock-tag{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--tx);background:var(--s3);border:1px solid var(--b);border-radius:5px;padding:3px 8px;flex-shrink:0}
@@ -365,12 +364,6 @@ select.field-input{-webkit-appearance:none;appearance:none;cursor:pointer;backgr
   .ahd{padding:13px 15px}
   .abody{padding:14px}
 }
-@media(max-width:420px){
-  .hero-h1{font-size:28px}
-  .mob-cards{grid-template-columns:1fr}
-  .sname{font-size:13px}
-  .arc-champ-name{font-size:17px}
-}
 @media(hover:none) and (pointer:coarse){
   .admin-btn:hover{border-color:var(--b);color:var(--mu)}
   .admin-btn:active{border-color:rgba(211,18,42,.4);color:var(--tx)}
@@ -401,8 +394,8 @@ select.field-input{-webkit-appearance:none;appearance:none;cursor:pointer;backgr
       <div class="hero-sub">Manually Updated <span class="hdot"></span> Live Updates <span class="hdot"></span> <span id="hero-season-lbl">Season 1</span></div>
     </div>
     <div class="hero-key">
-      <div class="kc"><div class="kc-pip pi"></div><span class="kc-code">BYE</span><span class="kc-lbl">1-Seed Bye</span></div>
-      <div class="kc"><div class="kc-pip gold"></div><span class="kc-code">SB</span><span class="kc-lbl">Super Bowl</span></div>
+      <div class="kc"><div class="kc-pip pi"></div><span class="kc-code">PI</span><span class="kc-lbl">Play-In</span></div>
+      <div class="kc"><div class="kc-pip gold"></div><span class="kc-code">F</span><span class="kc-lbl">Finals</span></div>
     </div>
   </div>
 </div>
@@ -422,7 +415,7 @@ select.field-input{-webkit-appearance:none;appearance:none;cursor:pointer;backgr
         <div class="conf-headers" id="conf-hdr-row"></div>
         <div class="col-labels" id="col-label-row"></div>
         <div class="bracket-canvas" id="bcanvas">
-          <svg class="bracket-svg" id="bsvg" viewBox="0 0 1176 500" preserveAspectRatio="none"></svg>
+          <svg class="bracket-svg" id="bsvg" viewBox="0 0 1500 488" preserveAspectRatio="none"></svg>
         </div>
       </div>
     </div>
@@ -518,9 +511,9 @@ select.field-input{-webkit-appearance:none;appearance:none;cursor:pointer;backgr
           <div class="admin-section-body">
             <div class="fgrid">
               <div><div class="flbl">Top Team (ABB)</div><input class="field-input" id="e-ta" placeholder="KC" maxlength="8" style="text-transform:uppercase"></div>
-              <div><div class="flbl">Top Seed</div><input class="field-input" id="e-tseed" type="number" min="1" max="7" placeholder="#" style="text-align:center"></div>
+              <div><div class="flbl">Top Seed</div><input class="field-input" id="e-tseed" type="number" min="1" max="10" placeholder="#" style="text-align:center"></div>
               <div><div class="flbl">Bot Team (ABB)</div><input class="field-input" id="e-ba" placeholder="BUF" maxlength="8" style="text-transform:uppercase"></div>
-              <div><div class="flbl">Bot Seed</div><input class="field-input" id="e-bseed" type="number" min="1" max="7" placeholder="#" style="text-align:center"></div>
+              <div><div class="flbl">Bot Seed</div><input class="field-input" id="e-bseed" type="number" min="1" max="10" placeholder="#" style="text-align:center"></div>
             </div>
             <button class="action-btn" id="save-teams-btn">Save Teams &amp; Seeds</button>
             <div class="panel-msg" id="edit-msg"></div>
@@ -529,21 +522,21 @@ select.field-input{-webkit-appearance:none;appearance:none;cursor:pointer;backgr
 
         <div class="admin-section">
           <div class="admin-section-hd">
-            <div class="admin-section-icon green">🏈</div>
-            <div><div class="admin-section-label">Game Score</div><div class="admin-section-desc" id="series-desc">NFL playoff games are single elimination. Enter each team's score, then mark the game final to lock in the winner.</div></div>
+            <div class="admin-section-icon green">🏐</div>
+            <div><div class="admin-section-label">Series Score</div><div class="admin-section-desc" id="series-desc">Format is set automatically by round. Tap + to record game wins — winner &amp; status update automatically.</div></div>
           </div>
           <div class="admin-section-body">
-            <div class="flbl">Format</div>
+            <div class="flbl">Series Format</div>
             <div class="format-lock" id="e-format-lock">
-              <span class="format-lock-tag" id="e-format-tag">1 GM</span>
-              <span class="format-lock-note" id="e-format-note">Single game — winner take all, no series</span>
+              <span class="format-lock-tag" id="e-format-tag">BO3</span>
+              <span class="format-lock-note" id="e-format-note">Best of 3 — set automatically for this round</span>
             </div>
-            <div class="series-need" id="series-need-lbl">Enter the score, then mark the game final</div>
+            <div class="series-need" id="series-need-lbl">First to 4 wins</div>
             <div class="series-ctrl">
               <div class="series-ctrl-team"><div class="series-ctrl-name" id="sc-top-name">Top</div></div>
               <div class="series-ctrl-btns">
                 <button class="sc-btn" id="sc-top-minus">−</button>
-                <input class="series-ctrl-score" id="sc-top-score" type="number" min="0" value="0">
+                <div class="series-ctrl-score" id="sc-top-score">0</div>
                 <button class="sc-btn plus" id="sc-top-plus">+</button>
               </div>
             </div>
@@ -551,12 +544,11 @@ select.field-input{-webkit-appearance:none;appearance:none;cursor:pointer;backgr
               <div class="series-ctrl-team"><div class="series-ctrl-name" id="sc-bot-name">Bottom</div></div>
               <div class="series-ctrl-btns">
                 <button class="sc-btn" id="sc-bot-minus">−</button>
-                <input class="series-ctrl-score" id="sc-bot-score" type="number" min="0" value="0">
+                <div class="series-ctrl-score" id="sc-bot-score">0</div>
                 <button class="sc-btn plus" id="sc-bot-plus">+</button>
               </div>
             </div>
-            <button class="action-btn" id="mark-final-btn" style="margin-bottom:10px;">Mark Game Final</button>
-            <div style="margin-bottom:6px"><div class="flbl">Status Text</div><input class="field-input" id="e-series" placeholder="Auto-generated, or override"></div>
+            <div style="margin-bottom:6px"><div class="flbl">Series Status Text</div><input class="field-input" id="e-series" placeholder="Auto-generated, or override"></div>
             <div class="panel-msg" id="series-msg"></div>
           </div>
         </div>
@@ -577,7 +569,7 @@ select.field-input{-webkit-appearance:none;appearance:none;cursor:pointer;backgr
         <div class="admin-section">
           <div class="admin-section-hd">
             <div class="admin-section-icon gold">➜</div>
-            <div><div class="admin-section-label">Advance Winner</div><div class="admin-section-desc" id="advance-desc">Push the winner into the next round automatically. Wild Card winners are reseeded — the 1-seed always plays the lowest surviving seed.</div></div>
+            <div><div class="admin-section-label">Advance Winner</div><div class="admin-section-desc" id="advance-desc">Push the series winner into the next round automatically.</div></div>
           </div>
           <div class="admin-section-body">
             <button class="gold-btn" id="advance-btn" disabled>Advance Winner →</button>
@@ -593,7 +585,7 @@ select.field-input{-webkit-appearance:none;appearance:none;cursor:pointer;backgr
       <div class="admin-section">
         <div class="admin-section-hd">
           <div class="admin-section-icon gold">🏆</div>
-          <div><div class="admin-section-label">Set Champion</div><div class="admin-section-desc">Usually set automatically when you advance the Super Bowl winner — use this only to override.</div></div>
+          <div><div class="admin-section-label">Set Champion</div><div class="admin-section-desc">Usually set automatically when you advance the Finals winner — use this only to override.</div></div>
         </div>
         <div class="admin-section-body">
           <div class="frow">
@@ -684,16 +676,17 @@ const logoUrl=a=>{const k=ESPN_MAP[(a||'').toUpperCase()];return k?`https://a.es
 // ═══════════════════════════════════════════════════
 // DATA MODEL
 // ═══════════════════════════════════════════════════
-const formatForType=type=>1; // NFL playoff games are single elimination — no best-of series
-const defM=(id,conf,type,pos)=>({id,conf,type,pos,topTeam:'',topSeed:'',topScore:'',botTeam:'',botSeed:'',botScore:'',winner:'',status:'',seriesTxt:'',forfeit:'',finalized:false,format:formatForType(type)});
+const formatForType=type=>type.startsWith('pi')?1:3;
+const defM=(id,conf,type,pos)=>({id,conf,type,pos,topTeam:'',topSeed:'',topScore:'',botTeam:'',botSeed:'',botScore:'',winner:'',status:'',seriesTxt:'',forfeit:'',format:formatForType(type)});
 function buildDefault(seasonNum){
   const m=[];let id=0;
-  // NFL format: 7 seeds per conference, no play-in.
-  // Round 0 = Wild Card (3 games — the 1-seed gets a bye directly into the Divisional Round).
-  // Round 1 = Divisional (2 games). Round 2 = Conference Championship (1 game).
-  const roundSizes=[3,2,1];
   ['east','west'].forEach(c=>{
-    roundSizes.forEach((n,r)=>{for(let p=0;p<n;p++)m.push(defM(id++,c,'main',p+r*10));});
+    m.push(defM(id++,c,'pi-a',0));
+    m.push(defM(id++,c,'pi-b',0));
+    m.push(defM(id++,c,'pi-c',0));
+  });
+  ['east','west'].forEach(c=>{
+    for(let r=0;r<3;r++){const n=4>>r;for(let p=0;p<n;p++)m.push(defM(id++,c,'main',p+r*10));}
   });
   m.push(defM(id++,'finals','finals',0));
   return{season:seasonNum||1,matchups:m,champion:'',championSeries:''};
@@ -702,6 +695,7 @@ function buildDefault(seasonNum){
 let BD=null, selId=null, adminOk=false, ARCHIVE=null;
 let UNDO_STACK=[];
 const gM=id=>BD.matchups.find(m=>m.id===id);
+const gPI=(c,t)=>BD.matchups.find(m=>m.conf===c&&m.type===t);
 const gR=(c,r)=>BD.matchups.filter(m=>m.conf===c&&m.type==='main'&&m.pos>=r*10&&m.pos<r*10+10).sort((a,b)=>a.pos-b.pos);
 const gF=()=>BD.matchups.find(m=>m.type==='finals');
 
@@ -735,7 +729,7 @@ async function load(){
   try{d=await apiGet('/api/bracket');}catch(e){setStatus('err');}
   BD=d&&d.matchups?d:buildDefault(14);
   if(!BD.season)BD.season=14;
-  BD.matchups.forEach(m=>{m.format=formatForType(m.type);if(m.forfeit===undefined)m.forfeit='';if(m.finalized===undefined)m.finalized=!!m.winner;});
+  BD.matchups.forEach(m=>{m.format=formatForType(m.type);if(m.forfeit===undefined)m.forfeit='';});
   if(!d||!d.matchups){try{await apiPost('/api/bracket',BD);}catch{}}
   setLoad(false);setStatus('ok');
 }
@@ -780,21 +774,19 @@ function badge(m){
 // ═══════════════════════════════════════════════════
 // LAYOUT CONSTANTS
 // ═══════════════════════════════════════════════════
-const W=1176, H=500;
+const W=1500, H=488;
 const CW=140, FW=124;
 const SH=34, CH=68;
 const GAP=22, MARGIN=40;
-const BYE_H=53; // header row (~19px) + single 34px slot
 
-// 4 vertical slots per conference in the Wild Card column: 1-seed BYE + 3 Wild Card games.
-const SLOT_Y=[68,168,274,380];
-const BYE_Y=SLOT_Y[0], WCY=[SLOT_Y[1],SLOT_Y[2],SLOT_Y[3]];
-const R2Y=[115,327]; // Divisional round — averages of (BYE,G1) and (G2,G3) slots above
+const R1Y=[62,168,274,380];
+const R2Y=[115,327];
 const CFY=221;
+const PI_Y=[62,221,380];
 
-const FIN_X=MARGIN+3*CW+3*GAP;
-const CF_E_X=FIN_X+FW+GAP, R2_E_X=CF_E_X+CW+GAP, R1_E_X=R2_E_X+CW+GAP;
-const CF_W_X=FIN_X-GAP-CW, R2_W_X=CF_W_X-GAP-CW, R1_W_X=R2_W_X-GAP-CW;
+const FIN_X=MARGIN+4*CW+4*GAP;
+const CF_E_X=FIN_X+FW+GAP, R2_E_X=CF_E_X+CW+GAP, R1_E_X=R2_E_X+CW+GAP, PI_E_X=R1_E_X+CW+GAP;
+const CF_W_X=FIN_X-GAP-CW, R2_W_X=CF_W_X-GAP-CW, R1_W_X=R2_W_X-GAP-CW, PI_W_X=R1_W_X-GAP-CW;
 
 // ═══════════════════════════════════════════════════
 // RENDER DESKTOP
@@ -809,15 +801,13 @@ function cardEl(m,x,y,extraClass='',w=CW){
   el.innerHTML=slotH(m.topTeam,m.topSeed,m.topScore,tw,hr)+slotH(m.botTeam,m.botSeed,m.botScore,bw,hr)+badge(m);
   return el;
 }
-// The bye label lives IN-FLOW inside the card (like the mobile ".mob-pi-lbl" and the
-// Finals ".finals-hdr") rather than as a separately floated sibling — this guarantees
-// it can never collide with the team-name text below it, regardless of font metrics.
-function byeCard(team,seed,x,y){
-  const el=document.createElement('div');
-  el.className='card bye-card';
-  el.style.cssText=`left:${x}px;top:${y}px;`;
-  el.innerHTML=`<div class="bye-hdr">1 Seed · Bye</div>`+slotH(team,seed,'',false,false);
-  return[el];
+function piCard(m,x,y,label,note=''){
+  const el=cardEl(m,x,y,'pi-card');
+  const lbl=document.createElement('div');
+  lbl.className='pi-game-label';
+  lbl.style.cssText=`left:${x}px;top:${y-15}px;width:${CW}px;`;
+  lbl.textContent=label+(note?` · ${note}`:'');
+  return[lbl,el];
 }
 
 function drawLines(svg){
@@ -831,12 +821,12 @@ function drawLines(svg){
   trophyEl.setAttribute('width',trophyW);
   trophyEl.setAttribute('height',trophyH);
   trophyEl.setAttribute('opacity','0.13');
-  trophyEl.style.filter='drop-shadow(0 0 14px rgba(201,169,74,0.4))';
+  trophyEl.style.filter='drop-shadow(0 0 14px rgba(245,196,0,0.4))';
   svg.appendChild(trophyEl);
 
-  const lineC='rgba(10,31,68,0.14)';
-  const goldC='rgba(201,169,74,0.45)';
-  const seedC='rgba(124,92,191,0.30)';
+  const lineC='rgba(255,255,255,0.14)';
+  const goldC='rgba(245,196,0,0.4)';
+  const piC='rgba(138,138,168,0.35)';
 
   function line(x1,y1,x2,y2,color=lineC,w=1.5){
     const l=document.createElementNS('http://www.w3.org/2000/svg','line');
@@ -847,13 +837,19 @@ function drawLines(svg){
   const hline=(x1,x2,y,c)=>line(x1,y,x2,y,c);
   const vline=(x,y1,y2,c)=>line(x,y1,x,y2,c);
 
-  // The bye card is shorter (single slot + header) than the two-slot game cards, so its
-  // true visual center sits lower relative to its top than a full-height card would.
-  const slotCenter=i=>i===0?BYE_Y+BYE_H/2:SLOT_Y[i]+CH/2;
+  const r1Center=i=>R1Y[i]+CH/2;
   const r2Center=i=>R2Y[i]+CH/2;
   const cfCenter=CFY+CH/2;
+  const piCenter=i=>PI_Y[i]+CH/2;
 
-  // Divisional (round 1) -> Conference Championship (round 2) -> Super Bowl. Unchanged bracket-merge shape.
+  const r1e_right=R1_E_X+CW, r2e_left=R2_E_X;
+  const e12_mid=(r1e_right+r2e_left)/2;
+  for(let i=0;i<2;i++){
+    const yA=r1Center(i*2), yB=r1Center(i*2+1), yM=r2Center(i);
+    hline(r1e_right,e12_mid,yA); hline(r1e_right,e12_mid,yB);
+    vline(e12_mid,yA,yB);
+    hline(e12_mid,r2e_left,yM);
+  }
   const r2e_right=R2_E_X+CW, cfe_left=CF_E_X;
   const e23_mid=(r2e_right+cfe_left)/2;
   hline(r2e_right,e23_mid,r2Center(0)); hline(r2e_right,e23_mid,r2Center(1));
@@ -861,6 +857,14 @@ function drawLines(svg){
   hline(e23_mid,cfe_left,cfCenter);
   hline(CF_E_X+CW,FIN_X+FW,cfCenter,goldC);
 
+  const r1w_left=R1_W_X, r2w_right=R2_W_X+CW;
+  const w12_mid=(r1w_left+r2w_right)/2;
+  for(let i=0;i<2;i++){
+    const yA=r1Center(i*2), yB=r1Center(i*2+1), yM=r2Center(i);
+    hline(w12_mid,r1w_left,yA); hline(w12_mid,r1w_left,yB);
+    vline(w12_mid,yA,yB);
+    hline(r2w_right,w12_mid,yM);
+  }
   const r2w_left=R2_W_X, cfw_right=CF_W_X+CW;
   const w23_mid=(r2w_left+cfw_right)/2;
   hline(w23_mid,r2w_left,r2Center(0)); hline(w23_mid,r2w_left,r2Center(1));
@@ -868,26 +872,24 @@ function drawLines(svg){
   hline(cfw_right,w23_mid,cfCenter);
   hline(CF_W_X,FIN_X,cfCenter,goldC);
 
-  // Wild Card (round 0, 3 games) + 1-seed BYE -> Divisional (round 1, 2 games).
-  // The 1-seed always plays the lowest surviving seed (Divisional game 0); the other
-  // two Wild Card winners meet in Divisional game 1 — matchups are reseeded, not fixed,
-  // so these connectors are drawn as a merge rather than a literal 1:1 bracket line.
-  function wildCardMerge(r1X,r2X,side){
-    const outerEdge=side==='east'?r1X:r1X+CW;      // WC column edge facing Divisional column
-    const innerEdge=side==='east'?r2X+CW:r2X;       // Divisional column edge facing WC column
-    const mid=(outerEdge+innerEdge)/2;
-    // 1-seed BYE (slot 0) -> Divisional game 0
-    hline(outerEdge,mid,slotCenter(0));
-    hline(mid,innerEdge,r2Center(0));
-    vline(mid,slotCenter(0),r2Center(0));
-    // 3 Wild Card games (slots 1-3) reseed into Divisional game 0 (vs. the bye) and game 1 (each other)
-    [1,2,3].forEach(i=>hline(outerEdge,mid,slotCenter(i),seedC));
-    hline(mid,innerEdge,r2Center(0),seedC);
-    hline(mid,innerEdge,r2Center(1),seedC);
-    vline(mid,slotCenter(1),slotCenter(3),seedC);
-  }
-  wildCardMerge(R1_E_X,R2_E_X,'east');
-  wildCardMerge(R1_W_X,R2_W_X,'west');
+  const pi_e_left=PI_E_X, r1e_right2=R1_E_X+CW;
+  const pi_e_conn_x=(pi_e_left+r1e_right2)/2;
+  const r1_0_bot=R1Y[0]+SH+SH/2, r1_3_bot=R1Y[3]+SH+SH/2;
+  hline(pi_e_left,pi_e_conn_x,piCenter(0),piC);
+  hline(pi_e_conn_x,r1e_right2,r1_3_bot,piC);
+  vline(pi_e_conn_x,piCenter(0),r1_3_bot,piC);
+  hline(pi_e_left,pi_e_conn_x,piCenter(2),piC);
+  hline(pi_e_conn_x,r1e_right2,r1_0_bot,piC);
+  vline(pi_e_conn_x,r1_0_bot,piCenter(2),piC);
+
+  const pi_w_right=PI_W_X+CW, r1w_left2=R1_W_X;
+  const pi_w_conn_x=(pi_w_right+r1w_left2)/2;
+  hline(pi_w_right,pi_w_conn_x,piCenter(0),piC);
+  hline(pi_w_conn_x,r1w_left2,r1_3_bot,piC);
+  vline(pi_w_conn_x,piCenter(0),r1_3_bot,piC);
+  hline(pi_w_right,pi_w_conn_x,piCenter(2),piC);
+  hline(pi_w_conn_x,r1w_left2,r1_0_bot,piC);
+  vline(pi_w_conn_x,r1_0_bot,piCenter(2),piC);
 }
 
 function renderDesktop(){
@@ -900,13 +902,17 @@ function renderDesktop(){
   const add=el=>canvas.appendChild(el);
   const addAll=arr=>arr.forEach(add);
 
-  addAll(byeCard(gR('east',1)[0].topTeam,gR('east',1)[0].topSeed,R1_E_X,BYE_Y));
-  gR('east',0).forEach((m,i)=>add(cardEl(m,R1_E_X,WCY[i])));
+  addAll(piCard(gPI('east','pi-a'),PI_E_X,PI_Y[0],'G1','Win → #7'));
+  addAll(piCard(gPI('east','pi-b'),PI_E_X,PI_Y[1],'G2','Win → adv.'));
+  addAll(piCard(gPI('east','pi-c'),PI_E_X,PI_Y[2],'G3','Win → #8'));
+  gR('east',0).forEach((m,i)=>add(cardEl(m,R1_E_X,R1Y[i])));
   gR('east',1).forEach((m,i)=>add(cardEl(m,R2_E_X,R2Y[i])));
   gR('east',2).forEach(m=>add(cardEl(m,CF_E_X,CFY)));
 
-  addAll(byeCard(gR('west',1)[0].topTeam,gR('west',1)[0].topSeed,R1_W_X,BYE_Y));
-  gR('west',0).forEach((m,i)=>add(cardEl(m,R1_W_X,WCY[i])));
+  addAll(piCard(gPI('west','pi-a'),PI_W_X,PI_Y[0],'G1','Win → #7'));
+  addAll(piCard(gPI('west','pi-b'),PI_W_X,PI_Y[1],'G2','Win → adv.'));
+  addAll(piCard(gPI('west','pi-c'),PI_W_X,PI_Y[2],'G3','Win → #8'));
+  gR('west',0).forEach((m,i)=>add(cardEl(m,R1_W_X,R1Y[i])));
   gR('west',1).forEach((m,i)=>add(cardEl(m,R2_W_X,R2Y[i])));
   gR('west',2).forEach(m=>add(cardEl(m,CF_W_X,CFY)));
 
@@ -932,20 +938,22 @@ function renderDesktop(){
     fc.className='card finals-card';
     fc.style.cssText=`left:${FIN_X}px;top:${finCenterY-CH/2-16}px;width:${FW}px;`;
     fc.dataset.mid=f.id;
-    fc.innerHTML=`<div class="finals-hdr">🏆 Super Bowl</div>`+slotH(f.topTeam,f.topSeed,f.topScore,tw,hr)+slotH(f.botTeam,f.botSeed,f.botScore,bw,hr)+badge(f);
+    fc.innerHTML=`<div class="finals-hdr">🏆 Finals</div>`+slotH(f.topTeam,f.topSeed,f.topScore,tw,hr)+slotH(f.botTeam,f.botSeed,f.botScore,bw,hr)+badge(f);
     add(fc);
   }
 
   const lrow=document.getElementById('col-label-row');
   lrow.innerHTML='';
   const labels=[
-    {txt:'Wild Card',x:R1_W_X,w:CW},
-    {txt:'Divisional',x:R2_W_X,w:CW},
-    {txt:'Conf. Champ.',x:CF_W_X,w:CW},
-    {txt:'🏆 Super Bowl',x:FIN_X,w:FW,cls:'fin'},
-    {txt:'Conf. Champ.',x:CF_E_X,w:CW},
-    {txt:'Divisional',x:R2_E_X,w:CW},
-    {txt:'Wild Card',x:R1_E_X,w:CW},
+    {txt:'Play-In',x:PI_W_X,w:CW,cls:'pi'},
+    {txt:'First Round',x:R1_W_X,w:CW},
+    {txt:'Conf. Semis',x:R2_W_X,w:CW},
+    {txt:'Conf. Finals',x:CF_W_X,w:CW},
+    {txt:'🏆 Finals',x:FIN_X,w:FW,cls:'fin'},
+    {txt:'Conf. Finals',x:CF_E_X,w:CW},
+    {txt:'Conf. Semis',x:R2_E_X,w:CW},
+    {txt:'First Round',x:R1_E_X,w:CW},
+    {txt:'Play-In',x:PI_E_X,w:CW,cls:'pi'},
   ];
   labels.forEach(l=>{
     const d=document.createElement('div');
@@ -959,12 +967,12 @@ function renderDesktop(){
   chr.innerHTML='';
   const wHdr=document.createElement('div');
   wHdr.className='conf-hdr';
-  wHdr.style.left=R1_W_X+'px';
+  wHdr.style.left=PI_W_X+'px';
   wHdr.innerHTML=`<span class="conf-tag west">NFC</span><span class="conf-name">National Football Conference</span>`;
   chr.appendChild(wHdr);
   const eHdr=document.createElement('div');
   eHdr.className='conf-hdr';
-  eHdr.style.cssText=`right:${W-R1_E_X-CW}px;flex-direction:row-reverse;`;
+  eHdr.style.cssText=`right:${W-PI_E_X-CW}px;flex-direction:row-reverse;`;
   eHdr.innerHTML=`<span class="conf-tag east">AFC</span><span class="conf-name">American Football Conference</span>`;
   chr.appendChild(eHdr);
 }
@@ -977,24 +985,27 @@ function mobCard(m){
   const b=m.status==='live'?`<div class="mob-series live">● ${m.seriesTxt||'Live'}</div>`:m.status==='done'&&m.seriesTxt?`<div class="mob-series done">${m.seriesTxt}</div>`:m.seriesTxt?`<div class="mob-series">${m.seriesTxt}</div>`:'';
   return`<div class="mob-card">${slotH(m.topTeam,m.topSeed,m.topScore,tw,hr)}${slotH(m.botTeam,m.botSeed,m.botScore,bw,hr)}${b}</div>`;
 }
-function mobByeCard(team,seed){
-  return`<div class="mob-card pi"><div class="mob-pi-lbl">1 SEED · BYE</div>${slotH(team,seed,'',false,false)}</div>`;
+function mobPiCard(m,label,note=''){
+  const hr=!!m.winner, tw=hr&&m.winner===m.topTeam, bw=hr&&m.winner===m.botTeam;
+  const b=m.status==='live'?`<div class="mob-series live">● ${m.seriesTxt||'Live'}</div>`:m.status==='done'&&m.seriesTxt?`<div class="mob-series done">${m.seriesTxt}</div>`:'';
+  return`<div class="mob-card pi"><div class="mob-pi-lbl">${label}${note?` · ${note}`:''}</div>${slotH(m.topTeam,m.topSeed,m.topScore,tw,hr)}${slotH(m.botTeam,m.botSeed,m.botScore,bw,hr)}${b}</div>`;
 }
 function renderMobile(){
   const mob=document.getElementById('mob-layout');
   function confHTML(conf){
     const isW=conf==='west', tag=isW?'west':'east', label=isW?'NFC':'AFC', name=isW?'National Football Conference':'American Football Conference';
+    const pa=gPI(conf,'pi-a'), pb=gPI(conf,'pi-b'), pc=gPI(conf,'pi-c');
     const r1=gR(conf,0), r2=gR(conf,1), cf=gR(conf,2);
-    const byeTeam=r2[0]?r2[0].topTeam:'', byeSeed=r2[0]?r2[0].topSeed:'';
     return`<div class="mob-conf">
       <div class="mob-conf-hdr"><span class="conf-tag ${tag}">${label}</span><span class="conf-name">${name}</span></div>
       <div class="mob-section">
-        <div class="mob-round-lbl pi">Wild Card</div>
-        <div class="mob-cards single">${mobByeCard(byeTeam,byeSeed)}</div>
-        <div class="mob-cards">${r1.map(mobCard).join('')}</div>
+        <div class="mob-round-lbl pi">Play-In</div>
+        <div class="mob-cards">${mobPiCard(pa,'G1','Win→#7')}${mobPiCard(pb,'G2','Win→adv.')}</div>
+        <div class="mob-cards single">${mobPiCard(pc,'G3','Win→#8')}</div>
       </div>
-      <div class="mob-section"><div class="mob-round-lbl">Divisional</div><div class="mob-cards">${r2.map(mobCard).join('')}</div></div>
-      <div class="mob-section"><div class="mob-round-lbl">Conference Championship</div><div class="mob-cards single">${cf.map(mobCard).join('')}</div></div>
+      <div class="mob-section"><div class="mob-round-lbl">First Round</div><div class="mob-cards">${r1.map(mobCard).join('')}</div></div>
+      <div class="mob-section"><div class="mob-round-lbl">Conf. Semifinals</div><div class="mob-cards">${r2.map(mobCard).join('')}</div></div>
+      <div class="mob-section"><div class="mob-round-lbl">Conf. Finals</div><div class="mob-cards single">${cf.map(mobCard).join('')}</div></div>
     </div>`;
   }
   let finalsHTML='';
@@ -1011,7 +1022,7 @@ function renderMobile(){
     finalsHTML=mobCard(gF());
   }
   mob.innerHTML=`${confHTML('west')}
-    <div class="mob-finals"><div class="mob-finals-hdr">🏆 Super Bowl</div><div class="mob-finals-body">${finalsHTML}</div></div>
+    <div class="mob-finals"><div class="mob-finals-hdr">🏆 RFL Finals</div><div class="mob-finals-body">${finalsHTML}</div></div>
     ${confHTML('east')}`;
 }
 
@@ -1062,24 +1073,27 @@ function openArchiveModal(s){
   document.getElementById('am-title').textContent=`Season ${s.season}`;
   document.getElementById('am-sub').textContent='Archived playoff bracket';
   const u=s.champion?logoUrl(s.champion):null;
+  const gPI2=(c,t)=>(s.matchups||[]).find(m=>m.conf===c&&m.type===t);
   const gR2=(c,r)=>(s.matchups||[]).filter(m=>m.conf===c&&m.type==='main'&&m.pos>=r*10&&m.pos<r*10+10).sort((a,b)=>a.pos-b.pos);
   const finals=(s.matchups||[]).find(m=>m.type==='finals');
 
   const champBanner=s.champion?`<div class="achamp-banner">
       <span class="achamp-crown">👑</span>
       ${u?`<img src="${u}" alt="">`:''}
-      <div><div class="achamp-text-lbl">Super Bowl Champion</div><div class="achamp-text-name">${s.champion}</div>${s.championSeries?`<div class="achamp-text-series">Super Bowl: ${s.championSeries}</div>`:''}</div>
+      <div><div class="achamp-text-lbl">RFL Champion</div><div class="achamp-text-name">${s.champion}</div>${s.championSeries?`<div class="achamp-text-series">Finals: ${s.championSeries}</div>`:''}</div>
     </div>`:'';
 
+  const piBlock=conf=>[gPI2(conf,'pi-a'),gPI2(conf,'pi-b'),gPI2(conf,'pi-c')].filter(Boolean).map(m=>archiveMatchRow(m,conf)).join('');
   const roundBlock=(conf,r)=>gR2(conf,r).map(m=>archiveMatchRow(m,conf)).join('');
 
   const body=`
     ${champBanner}
     <div class="arounds">
-      <div class="around-block"><div class="around-hd">Wild Card</div>${roundBlock('west',0)}${roundBlock('east',0)}</div>
-      <div class="around-block"><div class="around-hd">Divisional Round</div>${roundBlock('west',1)}${roundBlock('east',1)}</div>
-      <div class="around-block"><div class="around-hd">Conference Championship</div>${roundBlock('west',2)}${roundBlock('east',2)}</div>
-      ${finals?`<div class="around-block"><div class="around-hd">Super Bowl</div>${archiveMatchRow(finals,'finals')}</div>`:''}
+      <div class="around-block"><div class="around-hd">Play-In</div>${piBlock('west')}${piBlock('east')}</div>
+      <div class="around-block"><div class="around-hd">First Round</div>${roundBlock('west',0)}${roundBlock('east',0)}</div>
+      <div class="around-block"><div class="around-hd">Conference Semifinals</div>${roundBlock('west',1)}${roundBlock('east',1)}</div>
+      <div class="around-block"><div class="around-hd">Conference Finals</div>${roundBlock('west',2)}${roundBlock('east',2)}</div>
+      ${finals?`<div class="around-block"><div class="around-hd">Finals</div>${archiveMatchRow(finals,'finals')}</div>`:''}
     </div>`;
   document.getElementById('am-body').innerHTML=body;
   document.getElementById('archive-modal-bg').classList.add('open');
@@ -1136,7 +1150,7 @@ async function unlockAdmin(){
       document.getElementById('admin-sub-text').textContent='Live changes sync instantly.';
       inp.value='';buildPicker();refreshUndoBtn();
     }else{
-      inp.style.borderColor='rgba(211,18,42,.6)';
+      inp.style.borderColor='rgba(255,18,51,.6)';
       showMsg('lock-msg',j.error||'Wrong password.','error');
     }
   }catch(e){
@@ -1158,8 +1172,9 @@ function switchAdminTab(tab,btn){
 // ═══════════════════════════════════════════════════
 function mLabel(m){
   let r;
-  if(m.type==='finals')r='Super Bowl';
-  else{const n=Math.floor(m.pos/10);r=`${m.conf==='east'?'AFC':'NFC'} ${['Wild Card','Divisional','Conf. Champ.'][n]}`;}
+  if(m.type==='finals')r='Finals';
+  else if(m.type.startsWith('pi'))r=`${m.conf.toUpperCase()} PI ${m.type.replace('pi-','G').toUpperCase()}`;
+  else{const n=Math.floor(m.pos/10);r=`${m.conf.toUpperCase()} ${['R1','R2','CF'][n]}`;}
   const t=m.topTeam&&m.botTeam?`${m.topTeam} vs ${m.botTeam}`:m.topTeam||m.botTeam||'Empty';
   return{r,t};
 }
@@ -1175,7 +1190,7 @@ function buildPicker(filter){
     const{r,t}=mLabel(m);
     return r.toLowerCase().includes(q)||t.toLowerCase().includes(q);
   });
-  const order=['AFC Wild Card','NFC Wild Card','AFC Divisional','NFC Divisional','AFC Conf Championship','NFC Conf Championship','Super Bowl'];
+  const order=['East Play-In','West Play-In','East R1','West R1','East R2','West R2','East Conf Finals','West Conf Finals','Finals'];
   const groups={};
   items.forEach(m=>{
     const grp=groupLabel(m);
@@ -1188,7 +1203,7 @@ function buildPicker(filter){
       const ffTag=m.forfeit?'<span class="forfeit-tag">FF</span>':'';
       const pillTxt=m.status==='done'?'DONE':m.status==='live'?'LIVE':'OPEN';
       const pillCls=m.status==='done'?'done':m.status==='live'?'live':'';
-      return`<div class="mp-row${selId===m.id?' sel':''}" data-id="${m.id}"><div><div class="mp-name">${t}${ffTag}</div><div class="mp-meta">${m.status?m.status.toUpperCase():'Not started'}</div></div><span class="mp-tag ${pillCls}">${pillTxt}</span></div>`;
+      return`<div class="mp-row${selId===m.id?' sel':''}" data-id="${m.id}"><div><div class="mp-name">${t}${ffTag}</div><div class="mp-meta">BO${m.format}${statusTag}</div></div><span class="mp-tag ${pillCls}">${pillTxt}</span></div>`;
     }).join('');
     return`<div class="mp-group"><div class="mp-group-hd">${g}</div>${rows}</div>`;
   }).join('');
@@ -1197,10 +1212,11 @@ function buildPicker(filter){
 }
 const confLabel=c=>c==='east'?'AFC':c==='west'?'NFC':'';
 function groupLabel(m){
-  if(m.type==='finals')return'Super Bowl';
+  if(m.type==='finals')return'Finals';
   const c=confLabel(m.conf);
+  if(m.type.startsWith('pi'))return`${c} Play-In`;
   const n=Math.floor(m.pos/10);
-  return`${c} ${['Wild Card','Divisional','Conf Championship'][n]}`;
+  return`${c} ${['R1','R2','Conf Finals'][n]}`;
 }
 document.getElementById('mp-search').addEventListener('input',e=>buildPicker(e.target.value));
 document.querySelectorAll('.mp-filter').forEach(btn=>{
@@ -1215,20 +1231,23 @@ document.querySelectorAll('.mp-filter').forEach(btn=>{
 // ═══════════════════════════════════════════════════
 // EDIT FORM — teams/seeds, series score, advance
 // ═══════════════════════════════════════════════════
+function neededWins(fmt){return Math.ceil(parseInt(fmt||7,10)/2);}
+
 function refreshSeriesUI(m){
-  document.getElementById('e-format-tag').textContent='1 GM';
-  document.getElementById('e-format-note').textContent='Single game — winner take all, no series';
-  document.getElementById('series-need-lbl').textContent=m.finalized?'Game is final':'Enter the score, then mark the game final';
+  const fmt=parseInt(m.format||formatForType(m.type),10);
+  document.getElementById('e-format-tag').textContent=`BO${fmt}`;
+  document.getElementById('e-format-note').textContent=m.type.startsWith('pi')
+    ?'Best of 1 — play-in games are always single-elimination'
+    :'Best of 3 — set automatically for this round';
+  document.getElementById('series-need-lbl').textContent=`First to ${neededWins(fmt)} win${neededWins(fmt)>1?'s':''}`;
   document.getElementById('sc-top-name').textContent=m.topTeam||'Top team';
   document.getElementById('sc-bot-name').textContent=m.botTeam||'Bottom team';
-  document.getElementById('sc-top-score').value=m.topScore!==''&&m.topScore!==undefined?m.topScore:0;
-  document.getElementById('sc-bot-score').value=m.botScore!==''&&m.botScore!==undefined?m.botScore:0;
+  document.getElementById('sc-top-score').textContent=m.topScore!==''&&m.topScore!==undefined?m.topScore:0;
+  document.getElementById('sc-bot-score').textContent=m.botScore!==''&&m.botScore!==undefined?m.botScore:0;
   document.getElementById('e-series').value=m.seriesTxt||'';
   const ready=!!(m.topTeam&&m.botTeam);
   document.getElementById('sc-top-plus').disabled=!ready;
   document.getElementById('sc-bot-plus').disabled=!ready;
-  const finalBtn=document.getElementById('mark-final-btn');
-  if(finalBtn){finalBtn.disabled=!ready;finalBtn.textContent=m.finalized?'Reopen Game':'Mark Game Final';}
   const ffTopBtn=document.getElementById('ff-top-btn'), ffBotBtn=document.getElementById('ff-bot-btn');
   if(ffTopBtn){ffTopBtn.disabled=!ready;ffTopBtn.textContent=`${m.topTeam||'Top team'} forfeits`;}
   if(ffBotBtn){ffBotBtn.disabled=!ready;ffBotBtn.textContent=`${m.botTeam||'Bottom team'} forfeits`;}
@@ -1237,23 +1256,21 @@ function refreshSeriesUI(m){
   const unadvBtn=document.getElementById('unadvance-btn');
   if(unadvBtn)unadvBtn.style.display=isAdvanced(m)?'block':'none';
   const ffTag=m.forfeit?' (FF)':'';
-  advBtn.textContent=m.type==='finals'&&m.winner?`Crown ${m.winner} Super Bowl Champion 🏆`:m.winner?`Advance ${m.winner}${ffTag} →`:'Advance Winner →';
+  advBtn.textContent=m.type==='finals'&&m.winner?`Crown ${m.winner} Champion 🏆`:m.winner?`Advance ${m.winner}${ffTag} →`:'Advance Winner →';
 }
 
 function updateSeriesAuto(m){
   const ts=parseInt(m.topScore||0,10), bs=parseInt(m.botScore||0,10);
+  const need=neededWins(m.format);
   const ffTag=m.forfeit?' (FF)':'';
-  if(!(m.topTeam&&m.botTeam)){m.winner='';m.status='';m.seriesTxt='';m.forfeit='';return;}
-  if(m.finalized){
-    if(ts===bs){m.winner='';m.status='live';m.seriesTxt=`Tied ${ts}-${bs} — needs a winner`;}
-    else{
-      const w=ts>bs?m.topTeam:m.botTeam, ws=Math.max(ts,bs), ls=Math.min(ts,bs);
-      m.winner=w;m.status='done';m.seriesTxt=`Final: ${w} ${ws}-${ls}${ffTag}`;
-    }
-  }else if(ts>0||bs>0){
-    m.winner='';m.status='live';m.forfeit='';
-    m.seriesTxt=`${ts}-${bs}`;
-  }else{m.winner='';m.status='';m.seriesTxt='';m.forfeit='';}
+  if(m.topTeam&&m.botTeam){
+    if(ts>=need){m.winner=m.topTeam;m.status='done';m.seriesTxt=`${m.topTeam} wins ${ts}-${bs}${ffTag}`;}
+    else if(bs>=need){m.winner=m.botTeam;m.status='done';m.seriesTxt=`${m.botTeam} wins ${bs}-${ts}${ffTag}`;}
+    else if(ts>0||bs>0){
+      m.winner='';m.status='live';m.forfeit='';
+      m.seriesTxt=ts===bs?`Series tied ${ts}-${bs}`:`${ts>bs?m.topTeam:m.botTeam} leads ${Math.max(ts,bs)}-${Math.min(ts,bs)}`;
+    }else{m.winner='';m.status='';m.seriesTxt='';m.forfeit='';}
+  }
 }
 
 async function forfeitSeries(loserSide){
@@ -1261,17 +1278,17 @@ async function forfeitSeries(loserSide){
   const m=gM(selId);if(!m||!m.topTeam||!m.botTeam)return;
   const loserName=loserSide==='top'?m.topTeam:m.botTeam;
   const winnerName=loserSide==='top'?m.botTeam:m.topTeam;
-  if(!confirm(`Mark this as a forfeit?\n\n${loserName} forfeits — ${winnerName} wins.`))return;
+  if(!confirm(`Mark this as a forfeit?\n\n${loserName} forfeits — ${winnerName} wins the series ${neededWins(m.format)}-0.`))return;
   pushUndo();
+  const need=neededWins(m.format);
   m.forfeit=loserName;
-  if(loserSide==='top'){m.topScore=0;m.botScore=1;}
-  else{m.topScore=1;m.botScore=0;}
-  m.finalized=true;
+  if(loserSide==='top'){m.topScore=0;m.botScore=need;}
+  else{m.topScore=need;m.botScore=0;}
   updateSeriesAuto(m);
   try{
     await save();render();refreshSeriesUI(m);buildPicker(document.getElementById('mp-search').value);
     showMsg('series-msg',`✓ ${loserName} forfeited. ${winnerName} advances to be confirmed below.`,'success');
-    toast(`${loserName} forfeits — ${winnerName} wins`,'amber',4500);
+    toast(`${loserName} forfeits — ${winnerName} wins the series`,'amber',4500);
   }catch(e){
     UNDO_STACK.pop();refreshUndoBtn();
     showMsg('series-msg','Forfeit failed: '+e.message,'error');
@@ -1321,7 +1338,7 @@ async function bumpScore(side,delta){
   updateSeriesAuto(m);
   try{
     await save();render();refreshSeriesUI(m);buildPicker(document.getElementById('mp-search').value);
-    if(m.status==='done')toast(`${m.winner} wins! ${m.seriesTxt}`,'g',4500);
+    if(m.status==='done')toast(`${m.winner} wins the series! ${m.seriesTxt}`,'g',4500);
   }catch(e){
     UNDO_STACK.pop();refreshUndoBtn();
     showMsg('series-msg','Save failed: '+e.message,'error');
@@ -1335,43 +1352,6 @@ document.getElementById('ff-top-btn').addEventListener('click',()=>forfeitSeries
 document.getElementById('ff-bot-btn').addEventListener('click',()=>forfeitSeries('bot'));
 document.getElementById('unadvance-btn').addEventListener('click',unadvanceWinner);
 
-async function setScoreField(side){
-  if(selId===null)return;
-  const m=gM(selId);if(!m||!m.topTeam||!m.botTeam)return;
-  pushUndo();
-  const key=side==='top'?'topScore':'botScore';
-  const val=document.getElementById(side==='top'?'sc-top-score':'sc-bot-score').value;
-  m[key]=Math.max(0,parseInt(val||0,10));
-  m.forfeit='';
-  updateSeriesAuto(m);
-  try{
-    await save();render();refreshSeriesUI(m);buildPicker(document.getElementById('mp-search').value);
-    if(m.status==='done')toast(`${m.winner} wins! ${m.seriesTxt}`,'g',4500);
-  }catch(e){
-    UNDO_STACK.pop();refreshUndoBtn();
-    showMsg('series-msg','Save failed: '+e.message,'error');
-  }
-}
-document.getElementById('sc-top-score').addEventListener('change',()=>setScoreField('top'));
-document.getElementById('sc-bot-score').addEventListener('change',()=>setScoreField('bot'));
-
-document.getElementById('mark-final-btn').addEventListener('click',async()=>{
-  if(selId===null)return;
-  const m=gM(selId);if(!m||!m.topTeam||!m.botTeam)return;
-  pushUndo();
-  m.finalized=!m.finalized;
-  updateSeriesAuto(m);
-  try{
-    await save();render();refreshSeriesUI(m);buildPicker(document.getElementById('mp-search').value);
-    if(m.finalized&&m.winner)toast(`${m.winner} wins ${m.seriesTxt.replace('Final: ','')}`,'g',4500);
-    else if(!m.finalized)toast('Game reopened','amber',3000);
-    else showMsg('series-msg','Scores are tied — enter a winning score before marking final.','error');
-  }catch(e){
-    UNDO_STACK.pop();refreshUndoBtn();
-    showMsg('series-msg','Save failed: '+e.message,'error');
-  }
-});
-
 document.getElementById('e-series').addEventListener('change',async()=>{
   if(selId===null)return;
   const m=gM(selId);if(!m)return;
@@ -1382,12 +1362,16 @@ document.getElementById('e-series').addEventListener('change',async()=>{
 
 function isAdvanced(m){
   if(!m||!m.winner)return false;
-  if(m.type==='main'){
-    const round=Math.floor(m.pos/10);
-    if(round===0){
-      const div=gR(m.conf,1);
-      return div.some(d=>d.topTeam===m.winner||d.botTeam===m.winner);
-    }
+  if(m.type==='pi-a'){
+    const target=gR(m.conf,0)[3];
+    return target&&target.botTeam===m.winner;
+  }else if(m.type==='pi-b'){
+    const pc=gPI(m.conf,'pi-c');
+    return pc&&(pc.topTeam===m.winner||pc.botTeam===m.winner);
+  }else if(m.type==='pi-c'){
+    const target=gR(m.conf,0)[0];
+    return target&&target.botTeam===m.winner;
+  }else if(m.type==='main'){
     const next=computeNextSlot(m);
     if(!next||!next.target)return false;
     return next.slot==='top'?next.target.topTeam===m.winner:next.target.botTeam===m.winner;
@@ -1402,20 +1386,26 @@ async function unadvanceWinner(){
   const m=gM(selId);if(!m||!m.winner)return;
   if(!confirm('Remove '+m.winner+' from the next round slot? The downstream slot will be cleared.'))return;
   pushUndo();
-  if(m.type==='main'){
-    const round=Math.floor(m.pos/10);
-    if(round===0){
-      const realWinner=m.winner;
-      m.winner=''; // temporarily exclude this game from the reseed while we recompute
-      advanceFromWildCard(m.conf);
-      m.winner=realWinner;
-    }else{
-      const next=computeNextSlot(m);
-      if(next&&next.target){
-        if(next.slot==='top'){next.target.topTeam='';next.target.topSeed='';}
-        else{next.target.botTeam='';next.target.botSeed='';}
-        next.target.winner='';next.target.topScore='';next.target.botScore='';next.target.status='';next.target.seriesTxt='';next.target.finalized=false;
-      }
+  if(m.type==='pi-a'){
+    const target=gR(m.conf,0)[3];
+    if(target){target.botTeam='';target.botSeed='';target.winner='';target.topScore='';target.botScore='';target.status='';target.seriesTxt='';}
+    const pc=gPI(m.conf,'pi-c');
+    const loser=m.winner===m.topTeam?m.botTeam:m.topTeam;
+    if(pc&&pc.topTeam===loser){pc.topTeam='';pc.topSeed='';}
+  }else if(m.type==='pi-b'){
+    const pc=gPI(m.conf,'pi-c');
+    const loser=m.winner===m.topTeam?m.botTeam:m.topTeam;
+    if(pc&&pc.botTeam===m.winner){pc.botTeam='';pc.botSeed='';}
+    if(pc&&pc.topTeam===loser){pc.topTeam='';pc.topSeed='';}
+  }else if(m.type==='pi-c'){
+    const target=gR(m.conf,0)[0];
+    if(target){target.botTeam='';target.botSeed='';target.winner='';target.topScore='';target.botScore='';target.status='';target.seriesTxt='';}
+  }else if(m.type==='main'){
+    const next=computeNextSlot(m);
+    if(next&&next.target){
+      if(next.slot==='top'){next.target.topTeam='';next.target.topSeed='';}
+      else{next.target.botTeam='';next.target.botSeed='';}
+      next.target.winner='';next.target.topScore='';next.target.botScore='';next.target.status='';next.target.seriesTxt='';
     }
   }else if(m.type==='finals'){
     BD.champion='';BD.championSeries='';
@@ -1433,52 +1423,34 @@ async function unadvanceWinner(){
 function computeNextSlot(m){
   if(m.type==='main'){
     const round=Math.floor(m.pos/10), idx=m.pos%10;
+    if(round===0){const r2=gR(m.conf,1);return{target:r2[Math.floor(idx/2)],slot:idx%2===0?'top':'bot'};}
     if(round===1){const cf=gR(m.conf,2);return{target:cf[0],slot:idx===0?'top':'bot'};}
     if(round===2){const f=gF();return{target:f,slot:m.conf==='west'?'top':'bot'};}
   }
   return null;
 }
-
-// NFL reseeding: the 1-seed (already sitting in Divisional game 0's top slot) always plays
-// the lowest surviving seed. The other two Wild Card winners meet in Divisional game 1.
-function advanceFromWildCard(conf){
-  const wc=gR(conf,0);
-  const div=gR(conf,1);
-  const d0=div[0], d1=div[1];
-  const byeTeam=d0.topTeam, byeSeed=d0.topSeed;
-  [d0,d1].forEach(d=>{d.topTeam='';d.topSeed='';d.botTeam='';d.botSeed='';d.winner='';d.status='';d.seriesTxt='';d.topScore='';d.botScore='';d.finalized=false;});
-  d0.topTeam=byeTeam;d0.topSeed=byeSeed;
-  const winners=wc.filter(g=>g.winner).map(g=>({team:g.winner,seed:parseInt((g.winner===g.topTeam?g.topSeed:g.botSeed)||99,10)}));
-  if(winners.length===3){
-    winners.sort((a,b)=>a.seed-b.seed);
-    const worst=winners[2], others=[winners[0],winners[1]];
-    d0.botTeam=worst.team;d0.botSeed=worst.seed;
-    d1.topTeam=others[0].team;d1.topSeed=others[0].seed;
-    d1.botTeam=others[1].team;d1.botSeed=others[1].seed;
-  }else{
-    // Not all Wild Card games are decided yet — hold known winners in game 1
-    // until the third result is in, then the reseed above will sort it out.
-    if(winners[0]){d1.topTeam=winners[0].team;d1.topSeed=winners[0].seed;}
-    if(winners[1]){d1.botTeam=winners[1].team;d1.botSeed=winners[1].seed;}
-  }
-}
-
 document.getElementById('advance-btn').addEventListener('click',async()=>{
   if(selId===null)return;
   const m=gM(selId);if(!m||!m.winner)return;
   pushUndo();
   const winnerTeam=m.winner, winnerSeed=m.winner===m.topTeam?m.topSeed:m.botSeed;
+  const loserTeam=m.winner===m.topTeam?m.botTeam:m.topTeam;
+  const loserSeed=m.winner===m.topTeam?m.botSeed:m.topSeed;
 
-  if(m.type==='main'){
-    const round=Math.floor(m.pos/10);
-    if(round===0){
-      advanceFromWildCard(m.conf);
-    }else{
-      const next=computeNextSlot(m);
-      if(next&&next.target){
-        if(next.slot==='top'){next.target.topTeam=winnerTeam;next.target.topSeed=winnerSeed;}
-        else{next.target.botTeam=winnerTeam;next.target.botSeed=winnerSeed;}
-      }
+  if(m.type==='pi-a'){
+    const target=gR(m.conf,0)[3];
+    target.botTeam=winnerTeam;target.botSeed=7;
+    const pc=gPI(m.conf,'pi-c');pc.topTeam=loserTeam;pc.topSeed=loserSeed;
+  }else if(m.type==='pi-b'){
+    const pc=gPI(m.conf,'pi-c');pc.botTeam=winnerTeam;pc.botSeed=winnerSeed;
+  }else if(m.type==='pi-c'){
+    const target=gR(m.conf,0)[0];
+    target.botTeam=winnerTeam;target.botSeed=8;
+  }else if(m.type==='main'){
+    const next=computeNextSlot(m);
+    if(next&&next.target){
+      if(next.slot==='top'){next.target.topTeam=winnerTeam;next.target.topSeed=winnerSeed;}
+      else{next.target.botTeam=winnerTeam;next.target.botSeed=winnerSeed;}
     }
   }else if(m.type==='finals'){
     BD.champion=winnerTeam;BD.championSeries=m.seriesTxt;
@@ -1487,7 +1459,7 @@ document.getElementById('advance-btn').addEventListener('click',async()=>{
   try{
     await save();render();buildPicker(document.getElementById('mp-search').value);fillForm(m.id);
     showMsg('advance-msg','✓ Advanced!','success');
-    toast(m.type==='finals'?`🏆 ${winnerTeam} wins the Super Bowl!`:`${winnerTeam} advances`, m.type==='finals'?'gold':'g',m.type==='finals'?6000:3000);
+    toast(m.type==='finals'?`🏆 ${winnerTeam} wins the RFL Championship!`:`${winnerTeam} advances`, m.type==='finals'?'gold':'g',m.type==='finals'?6000:3000);
   }catch(e){
     UNDO_STACK.pop();refreshUndoBtn();
     showMsg('advance-msg','Advance failed: '+e.message,'error');
@@ -1505,7 +1477,7 @@ document.getElementById('champ-btn').addEventListener('click',async()=>{
   BD.champion=a;BD.championSeries=s;
   try{
     await save();render();
-    showMsg('champ-msg',`✓ ${a} crowned!`,'success');toast(`🏆 ${a} wins the Super Bowl!`,'gold',6000);
+    showMsg('champ-msg',`✓ ${a} crowned!`,'success');toast(`🏆 ${a} wins the RFL Championship!`,'gold',6000);
   }catch(e){
     UNDO_STACK.pop();refreshUndoBtn();
     showMsg('champ-msg','Failed: '+e.message,'error');
@@ -1563,34 +1535,28 @@ document.getElementById('archive-season-btn').addEventListener('click',async()=>
 // ═══════════════════════════════════════════════════
 // CONSOLE TOOLS
 // ═══════════════════════════════════════════════════
-// NFL 7-seed format: the 1-seed sits out Wild Card weekend with a bye (parked in the
-// Divisional round's top slot); seeds 2-7 play three Wild Card games (2v7, 3v6, 4v5).
 window.importStandings=async function(conf,teams){
   if(!['east','west'].includes(conf)){console.error("conf must be 'east' or 'west'");return;}
   if(!adminOk){console.error('Unlock the admin panel first.');return;}
   pushUndo();
-  const byT=s=>teams.find(t=>t.seed===s);
-  const div=gR(conf,1);
-  const s1=byT(1);
-  if(div[0]){
-    div[0].topTeam=s1?s1.abb.toUpperCase():'';div[0].topSeed=1;
-    div[0].botTeam='';div[0].botSeed='';div[0].winner='';div[0].topScore='';div[0].botScore='';div[0].status='';div[0].seriesTxt='';div[0].finalized=false;
-  }
-  if(div[1]){
-    div[1].topTeam='';div[1].topSeed='';div[1].botTeam='';div[1].botSeed='';div[1].winner='';div[1].topScore='';div[1].botScore='';div[1].status='';div[1].seriesTxt='';div[1].finalized=false;
-  }
-  const pairs=[[2,7],[3,6],[4,5]];
+  const pa=gPI(conf,'pi-a'),pb=gPI(conf,'pi-b');
+  const s7=teams.find(t=>t.seed===7),s8=teams.find(t=>t.seed===8);
+  const s9=teams.find(t=>t.seed===9),s10=teams.find(t=>t.seed===10);
+  if(pa){pa.topTeam=s7?s7.abb.toUpperCase():'';pa.topSeed=7;pa.botTeam=s8?s8.abb.toUpperCase():'';pa.botSeed=8;pa.winner='';pa.topScore='';pa.botScore='';pa.status='';pa.seriesTxt='';}
+  if(pb){pb.topTeam=s9?s9.abb.toUpperCase():'';pb.topSeed=9;pb.botTeam=s10?s10.abb.toUpperCase():'';pb.botSeed=10;pb.winner='';pb.topScore='';pb.botScore='';pb.status='';pb.seriesTxt='';}
+  const pairs=[[1,8],[4,5],[3,6],[2,7]];
   const r1=gR(conf,0);
   pairs.forEach(([ts,bs],i)=>{
     const m=r1[i];if(!m)return;
-    const top=byT(ts), bot=byT(bs);
+    const top=teams.find(t=>t.seed===ts);
+    const bot=(bs===7||bs===8)?null:teams.find(t=>t.seed===bs);
     m.topTeam=top?top.abb.toUpperCase():'';m.topSeed=ts;
     m.botTeam=bot?bot.abb.toUpperCase():'';m.botSeed=bs;
-    m.winner='';m.topScore='';m.botScore='';m.status='';m.seriesTxt='';m.finalized=false;
+    m.winner='';m.topScore='';m.botScore='';m.status='';m.seriesTxt='';
   });
   try{
     await save();render();if(adminOk)buildPicker();refreshUndoBtn();
-    console.log(`%c✓ Imported ${conf} standings (seeds 1-7)`,'color:#1c7a3e;font-weight:bold');
+    console.log(`%c✓ Imported ${conf} standings`,'color:#3de87a;font-weight:bold');
   }catch(e){
     UNDO_STACK.pop();refreshUndoBtn();
     console.error('Import failed:',e.message);
