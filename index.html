@@ -126,7 +126,7 @@ body{
 .col-lbl.pi{color:var(--pi)}
 .col-lbl.fin{color:var(--gold)}
 
-.bracket-canvas{position:relative;width:1176px;height:488px;margin:0 auto}
+.bracket-canvas{position:relative;width:1176px;height:500px;margin:0 auto}
 .bracket-svg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
 
 /* ── CARDS ── */
@@ -134,14 +134,14 @@ body{
 .card:hover{box-shadow:var(--shadow-md);border-color:var(--b3)}
 .card.pi-card{border-color:var(--pi-mid)}
 .card.bye-card{border-color:var(--pi-mid);height:auto}
-.bye-tag{position:absolute;z-index:11;font-size:8px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--pi);text-align:center;white-space:nowrap}
+.bye-hdr{font-size:8px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--pi);text-align:center;padding:5px 8px 4px;background:var(--pi-d);border-bottom:1px solid var(--pi-mid)}
 .card.finals-card{width:124px;border-color:var(--gold-mid);background:var(--s1)}
 .card.finals-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);z-index:1}
 .card.champ-card{width:124px;border-color:var(--gold-mid);background:var(--s1);height:auto}
 
 .slot{display:flex;align-items:center;height:34px;padding:0 9px;gap:7px;position:relative}
 .slot:first-child{border-bottom:1px solid var(--b2)}
-.slot.winner{background:rgba(61,232,122,.06)}
+.slot.winner{background:rgba(23,138,65,.06)}
 .slot.loser .sname,.slot.loser .sseed{opacity:.35}
 .slot.loser .slogo{opacity:.25;filter:grayscale(1)}
 .slot.winner .sname{color:var(--navy)}
@@ -157,14 +157,12 @@ body{
 .series-badge.live{color:var(--win)}
 .series-badge.done{color:var(--mu)}
 
-.pi-game-label{position:absolute;z-index:11;font-size:8px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--pi);text-align:center;white-space:nowrap}
-
 .champ-inner{padding:12px 14px;text-align:center}
 .champ-crown{font-size:18px;margin-bottom:4px}
 .champ-logo{width:38px;height:38px;object-fit:contain;display:block;margin:0 auto 4px}
 .champ-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:24px;letter-spacing:.04em;color:var(--navy)}
 .champ-series{font-size:10px;color:var(--gold);font-family:'JetBrains Mono',monospace;margin-top:2px}
-.finals-hdr{font-size:8px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);text-align:center;padding:5px 8px 4px;background:var(--gold-d);border-bottom:1px solid rgba(245,196,0,.12)}
+.finals-hdr{font-size:8px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);text-align:center;padding:5px 8px 4px;background:var(--gold-d);border-bottom:1px solid rgba(201,169,74,.20)}
 
 /* ── MOBILE BRACKET (uses same card classes as standings mobile sections) ── */
 .mobile-only{display:none}
@@ -184,7 +182,7 @@ body{
 .mob-series.live{color:var(--win)}
 .mob-series.done{color:var(--mu)}
 .mob-finals{border:1px solid var(--gold-mid);border-radius:11px;overflow:hidden;margin-bottom:20px;background:var(--s1);box-shadow:var(--shadow-sm)}
-.mob-finals-hdr{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-align:center;padding:11px;border-bottom:1px solid rgba(245,196,0,.15);background:var(--gold-d)}
+.mob-finals-hdr{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-align:center;padding:11px;border-bottom:1px solid rgba(201,169,74,.20);background:var(--gold-d)}
 .mob-finals-body{padding:11px}
 .mob-finals-body .mob-card{width:100%;background:transparent;border:none}
 
@@ -298,17 +296,17 @@ select.field-input{-webkit-appearance:none;appearance:none;cursor:pointer;backgr
 .action-btn:hover{background:rgba(91,156,246,.16)}
 .action-btn:disabled{opacity:.5;cursor:not-allowed}
 .gold-btn{width:100%;background:var(--gold-d);border:1px solid var(--gold-mid);border-radius:7px;padding:10px;color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .15s;min-height:42px;margin-top:4px}
-.gold-btn:hover{background:rgba(245,196,0,.16)}
+.gold-btn:hover{background:rgba(201,169,74,.16)}
 .gold-btn:disabled{opacity:.5;cursor:not-allowed}
-.green-btn{width:100%;background:var(--gr-d);border:1px solid rgba(31,224,122,.3);border-radius:7px;padding:10px;color:var(--gr);font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .15s;min-height:42px;margin-top:4px}
-.green-btn:hover{background:rgba(31,224,122,.16)}
+.green-btn{width:100%;background:var(--gr-d);border:1px solid rgba(28,122,62,.3);border-radius:7px;padding:10px;color:var(--gr);font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .15s;min-height:42px;margin-top:4px}
+.green-btn:hover{background:rgba(28,122,62,.16)}
 .green-btn:disabled{opacity:.5;cursor:not-allowed}
 .danger-btn{width:100%;background:var(--red-dim);border:1px solid var(--red-mid);border-radius:7px;padding:10px 16px;color:var(--red);font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:background .15s,border-color .15s;min-height:42px}
 .danger-btn:hover{background:rgba(211,18,42,.15);border-color:rgba(211,18,42,.4)}
 .danger-btn:disabled{opacity:.4;cursor:not-allowed}
 .panel-msg{font-size:12px;margin-top:8px;padding:8px 11px;border-radius:6px;display:none}
 .panel-msg.show{display:block}
-.panel-msg.success{background:var(--gr-d);border:1px solid rgba(31,224,122,.18);color:var(--gr)}
+.panel-msg.success{background:var(--gr-d);border:1px solid rgba(28,122,62,.18);color:var(--gr)}
 .panel-msg.error{background:var(--red-dim);border:1px solid var(--red-mid);color:var(--lose)}
 .hidden{display:none!important}
 .mp-filters{display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap}
@@ -333,8 +331,8 @@ select.field-input{-webkit-appearance:none;appearance:none;cursor:pointer;backgr
 .series-ctrl-btns{display:flex;gap:4px}
 .sc-btn{width:28px;height:28px;border-radius:6px;border:1px solid var(--b);background:var(--s3);color:var(--tx2);font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .12s}
 .sc-btn:hover{border-color:var(--red-edge);color:var(--navy)}
-.sc-btn.plus{color:var(--gr);border-color:rgba(31,224,122,.2)}
-.sc-btn.plus:hover{background:var(--gr-d);border-color:rgba(31,224,122,.4)}
+.sc-btn.plus{color:var(--gr);border-color:rgba(28,122,62,.2)}
+.sc-btn.plus:hover{background:var(--gr-d);border-color:rgba(28,122,62,.4)}
 .series-need{font-size:9px;color:var(--mu);text-align:center;margin-bottom:6px;letter-spacing:.06em;text-transform:uppercase}
 .format-lock{display:flex;align-items:center;gap:9px;background:var(--s2);border:1px solid var(--b);border-radius:7px;padding:9px 12px;margin-bottom:8px}
 .format-lock-tag{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:var(--tx);background:var(--s3);border:1px solid var(--b);border-radius:5px;padding:3px 8px;flex-shrink:0}
@@ -366,6 +364,12 @@ select.field-input{-webkit-appearance:none;appearance:none;cursor:pointer;backgr
   .archive-grid{grid-template-columns:1fr}
   .ahd{padding:13px 15px}
   .abody{padding:14px}
+}
+@media(max-width:420px){
+  .hero-h1{font-size:28px}
+  .mob-cards{grid-template-columns:1fr}
+  .sname{font-size:13px}
+  .arc-champ-name{font-size:17px}
 }
 @media(hover:none) and (pointer:coarse){
   .admin-btn:hover{border-color:var(--b);color:var(--mu)}
@@ -418,7 +422,7 @@ select.field-input{-webkit-appearance:none;appearance:none;cursor:pointer;backgr
         <div class="conf-headers" id="conf-hdr-row"></div>
         <div class="col-labels" id="col-label-row"></div>
         <div class="bracket-canvas" id="bcanvas">
-          <svg class="bracket-svg" id="bsvg" viewBox="0 0 1176 488" preserveAspectRatio="none"></svg>
+          <svg class="bracket-svg" id="bsvg" viewBox="0 0 1176 500" preserveAspectRatio="none"></svg>
         </div>
       </div>
     </div>
@@ -776,13 +780,14 @@ function badge(m){
 // ═══════════════════════════════════════════════════
 // LAYOUT CONSTANTS
 // ═══════════════════════════════════════════════════
-const W=1176, H=488;
+const W=1176, H=500;
 const CW=140, FW=124;
 const SH=34, CH=68;
 const GAP=22, MARGIN=40;
+const BYE_H=53; // header row (~19px) + single 34px slot
 
 // 4 vertical slots per conference in the Wild Card column: 1-seed BYE + 3 Wild Card games.
-const SLOT_Y=[62,168,274,380];
+const SLOT_Y=[68,168,274,380];
 const BYE_Y=SLOT_Y[0], WCY=[SLOT_Y[1],SLOT_Y[2],SLOT_Y[3]];
 const R2Y=[115,327]; // Divisional round — averages of (BYE,G1) and (G2,G3) slots above
 const CFY=221;
@@ -804,16 +809,15 @@ function cardEl(m,x,y,extraClass='',w=CW){
   el.innerHTML=slotH(m.topTeam,m.topSeed,m.topScore,tw,hr)+slotH(m.botTeam,m.botSeed,m.botScore,bw,hr)+badge(m);
   return el;
 }
+// The bye label lives IN-FLOW inside the card (like the mobile ".mob-pi-lbl" and the
+// Finals ".finals-hdr") rather than as a separately floated sibling — this guarantees
+// it can never collide with the team-name text below it, regardless of font metrics.
 function byeCard(team,seed,x,y){
   const el=document.createElement('div');
   el.className='card bye-card';
   el.style.cssText=`left:${x}px;top:${y}px;`;
-  el.innerHTML=slotH(team,seed,'',false,false);
-  const lbl=document.createElement('div');
-  lbl.className='bye-tag';
-  lbl.style.cssText=`left:${x}px;top:${y-15}px;width:${CW}px;`;
-  lbl.textContent='1 SEED · BYE';
-  return[lbl,el];
+  el.innerHTML=`<div class="bye-hdr">1 Seed · Bye</div>`+slotH(team,seed,'',false,false);
+  return[el];
 }
 
 function drawLines(svg){
@@ -827,12 +831,12 @@ function drawLines(svg){
   trophyEl.setAttribute('width',trophyW);
   trophyEl.setAttribute('height',trophyH);
   trophyEl.setAttribute('opacity','0.13');
-  trophyEl.style.filter='drop-shadow(0 0 14px rgba(245,196,0,0.4))';
+  trophyEl.style.filter='drop-shadow(0 0 14px rgba(201,169,74,0.4))';
   svg.appendChild(trophyEl);
 
-  const lineC='rgba(255,255,255,0.14)';
-  const goldC='rgba(245,196,0,0.4)';
-  const seedC='rgba(138,138,168,0.35)';
+  const lineC='rgba(10,31,68,0.14)';
+  const goldC='rgba(201,169,74,0.45)';
+  const seedC='rgba(124,92,191,0.30)';
 
   function line(x1,y1,x2,y2,color=lineC,w=1.5){
     const l=document.createElementNS('http://www.w3.org/2000/svg','line');
@@ -843,7 +847,9 @@ function drawLines(svg){
   const hline=(x1,x2,y,c)=>line(x1,y,x2,y,c);
   const vline=(x,y1,y2,c)=>line(x,y1,x,y2,c);
 
-  const slotCenter=i=>SLOT_Y[i]+CH/2;
+  // The bye card is shorter (single slot + header) than the two-slot game cards, so its
+  // true visual center sits lower relative to its top than a full-height card would.
+  const slotCenter=i=>i===0?BYE_Y+BYE_H/2:SLOT_Y[i]+CH/2;
   const r2Center=i=>R2Y[i]+CH/2;
   const cfCenter=CFY+CH/2;
 
@@ -1130,7 +1136,7 @@ async function unlockAdmin(){
       document.getElementById('admin-sub-text').textContent='Live changes sync instantly.';
       inp.value='';buildPicker();refreshUndoBtn();
     }else{
-      inp.style.borderColor='rgba(255,18,51,.6)';
+      inp.style.borderColor='rgba(211,18,42,.6)';
       showMsg('lock-msg',j.error||'Wrong password.','error');
     }
   }catch(e){
@@ -1578,7 +1584,7 @@ window.importStandings=async function(conf,teams){
   });
   try{
     await save();render();if(adminOk)buildPicker();refreshUndoBtn();
-    console.log(`%c✓ Imported ${conf} standings`,'color:#3de87a;font-weight:bold');
+    console.log(`%c✓ Imported ${conf} standings`,'color:#1c7a3e;font-weight:bold');
   }catch(e){
     UNDO_STACK.pop();refreshUndoBtn();
     console.error('Import failed:',e.message);
