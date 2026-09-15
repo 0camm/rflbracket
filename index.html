@@ -1563,28 +1563,34 @@ document.getElementById('archive-season-btn').addEventListener('click',async()=>
 // ═══════════════════════════════════════════════════
 // CONSOLE TOOLS
 // ═══════════════════════════════════════════════════
+// NFL 7-seed format: the 1-seed sits out Wild Card weekend with a bye (parked in the
+// Divisional round's top slot); seeds 2-7 play three Wild Card games (2v7, 3v6, 4v5).
 window.importStandings=async function(conf,teams){
   if(!['east','west'].includes(conf)){console.error("conf must be 'east' or 'west'");return;}
   if(!adminOk){console.error('Unlock the admin panel first.');return;}
   pushUndo();
-  const pa=gPI(conf,'pi-a'),pb=gPI(conf,'pi-b');
-  const s7=teams.find(t=>t.seed===7),s8=teams.find(t=>t.seed===8);
-  const s9=teams.find(t=>t.seed===9),s10=teams.find(t=>t.seed===10);
-  if(pa){pa.topTeam=s7?s7.abb.toUpperCase():'';pa.topSeed=7;pa.botTeam=s8?s8.abb.toUpperCase():'';pa.botSeed=8;pa.winner='';pa.topScore='';pa.botScore='';pa.status='';pa.seriesTxt='';}
-  if(pb){pb.topTeam=s9?s9.abb.toUpperCase():'';pb.topSeed=9;pb.botTeam=s10?s10.abb.toUpperCase():'';pb.botSeed=10;pb.winner='';pb.topScore='';pb.botScore='';pb.status='';pb.seriesTxt='';}
-  const pairs=[[1,8],[4,5],[3,6],[2,7]];
+  const byT=s=>teams.find(t=>t.seed===s);
+  const div=gR(conf,1);
+  const s1=byT(1);
+  if(div[0]){
+    div[0].topTeam=s1?s1.abb.toUpperCase():'';div[0].topSeed=1;
+    div[0].botTeam='';div[0].botSeed='';div[0].winner='';div[0].topScore='';div[0].botScore='';div[0].status='';div[0].seriesTxt='';div[0].finalized=false;
+  }
+  if(div[1]){
+    div[1].topTeam='';div[1].topSeed='';div[1].botTeam='';div[1].botSeed='';div[1].winner='';div[1].topScore='';div[1].botScore='';div[1].status='';div[1].seriesTxt='';div[1].finalized=false;
+  }
+  const pairs=[[2,7],[3,6],[4,5]];
   const r1=gR(conf,0);
   pairs.forEach(([ts,bs],i)=>{
     const m=r1[i];if(!m)return;
-    const top=teams.find(t=>t.seed===ts);
-    const bot=(bs===7||bs===8)?null:teams.find(t=>t.seed===bs);
+    const top=byT(ts), bot=byT(bs);
     m.topTeam=top?top.abb.toUpperCase():'';m.topSeed=ts;
     m.botTeam=bot?bot.abb.toUpperCase():'';m.botSeed=bs;
-    m.winner='';m.topScore='';m.botScore='';m.status='';m.seriesTxt='';
+    m.winner='';m.topScore='';m.botScore='';m.status='';m.seriesTxt='';m.finalized=false;
   });
   try{
     await save();render();if(adminOk)buildPicker();refreshUndoBtn();
-    console.log(`%c✓ Imported ${conf} standings`,'color:#1c7a3e;font-weight:bold');
+    console.log(`%c✓ Imported ${conf} standings (seeds 1-7)`,'color:#1c7a3e;font-weight:bold');
   }catch(e){
     UNDO_STACK.pop();refreshUndoBtn();
     console.error('Import failed:',e.message);
