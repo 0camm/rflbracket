@@ -761,8 +761,8 @@ async function load(){
   setLoad(true);
   let d=null;
   try{d=await apiGet('/api/bracket');}catch(e){setStatus('err');}
-  BD=d&&d.matchups?d:buildDefault(14);
-  if(!BD.season)BD.season=14;
+  BD=d&&d.matchups?d:buildDefault(1);
+  if(!BD.season)BD.season=1;
   BD.matchups.forEach(m=>{m.format=formatForType(m.type);if(m.forfeit===undefined)m.forfeit='';});
   if(!d||!d.matchups){try{await apiPost('/api/bracket',BD);}catch{}}
   setLoad(false);setStatus('ok');
@@ -784,7 +784,7 @@ function setLoad(on){const b=document.getElementById('loading-bar');b.style.widt
 function refreshHero(){
   document.getElementById('hero-eyebrow').textContent=`Season ${BD.season} · Playoffs`;
   document.getElementById('hero-season-lbl').textContent=`Season ${BD.season}`;
-  document.getElementById('arc-next-season').placeholder=String((BD.season||14)+1);
+  document.getElementById('arc-next-season').placeholder=String((BD.season||1)+1);
 }
 
 // ═══════════════════════════════════════════════════
@@ -1360,7 +1360,7 @@ document.getElementById('archive-season-btn').addEventListener('click',async()=>
   clearMsg('archive-msg');
   if(!BD.champion){showMsg('archive-msg','Set a champion before archiving this season.','error');return;}
   const nextInput=document.getElementById('arc-next-season').value.trim();
-  const nextSeason=nextInput?parseInt(nextInput,10):(BD.season||14)+1;
+  const nextSeason=nextInput?parseInt(nextInput,10):(BD.season||1)+1;
   if(!confirm(`Archive Season ${BD.season} (Champion: ${BD.champion}) and start Season ${nextSeason}?\n\nThis cannot be undone.`))return;
   const btn=document.getElementById('archive-season-btn');
   btn.disabled=true;btn.textContent='Archiving…';
